@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 5212
 ENV FLASK_APP=main.pu
 
-ENTRYPOINT ["flask run --host=0.0.0.0"]
+ENTRYPOINT ["python", "main.py"]
 
