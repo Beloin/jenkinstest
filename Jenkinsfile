@@ -1,5 +1,6 @@
 pipeline {
-   stages {
+    agent any
+    stages {
         stage ('Initial') {
 	    steps {
 	 	echo 'Iniciando a Pipeline'   
@@ -11,5 +12,5 @@ pipeline {
 		echo 'Should Build now'
 	    }
 	}
-   }
+    }
 }
