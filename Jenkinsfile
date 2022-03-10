@@ -19,7 +19,7 @@ pipeline {
         stage ('Push Image') {
             steps {
                 script {
-                    docker.withRegistry('787909459977.dkr.ecr.sa-east-1.amazonaws.com', 'ecr:test-app-flask:my.aws.credentials'){
+                    docker.withRegistry('https://787909459977.dkr.ecr.sa-east-1.amazonaws.com', 'ecr:sa-east-1:my.aws.credentials'){
                         dockerapp.push('latest')
                         dockerapp.push("${env.BUILD_ID}")
                     }
