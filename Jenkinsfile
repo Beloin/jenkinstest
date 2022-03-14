@@ -26,5 +26,16 @@ pipeline {
                 }
             }
         }
+
+        stage ('Deploy') {
+            steps {
+                sh """
+                    ssh -i ${video-ec2} ubuntu@ec2-18-230-187-137.sa-east-1.compute.amazonaws.com "
+                        echo \"Yay\"
+                    "
+                """
+
+            }
+        }
     }
 }
